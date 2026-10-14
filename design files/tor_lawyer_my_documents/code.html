@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"primary-fixed":"#e3dfff","tertiary-fixed-dim":"#b4c5ff","secondary-fixed-dim":"#c3c0ff","surface-tint":"#5b598c","surface":"#faf8ff","surface-container-low":"#f2f3ff","surface-container-high":"#e2e7ff","secondary-fixed":"#e2dfff","error":"#ba1a1a","surface-dim":"#d2d9f4","background":"#faf8ff","on-secondary-fixed-variant":"#3e3c8f","primary":"#1e1b4b","primary-container":"#2d296a","on-surface-variant":"#47464f","tertiary-container":"#001d58","surface-container-lowest":"#ffffff","surface-variant":"#dae2fd","surface-bright":"#faf8ff","on-primary-container":"#8683ba","error-container":"#ffdad6","on-background":"#131b2e","on-primary-fixed":"#181445","primary-fixed-dim":"#c4c1fb","tertiary":"#000928","tertiary-fixed":"#dbe1ff","on-tertiary-fixed":"#00174b","surface-container":"#eaedff","on-secondary-container":"#393689","outline":"#787680","inverse-primary":"#c4c1fb","inverse-on-surface":"#eef0ff","on-tertiary-fixed-variant":"#003ea8","secondary":"#5654a8","on-error":"#ffffff","on-tertiary-container":"#5382ff","on-secondary":"#ffffff","on-primary-fixed-variant":"#444173","on-error-container":"#93000a","surface-container-highest":"#dae2fd","on-primary":"#ffffff","secondary-container":"#a7a5ff","outline-variant":"#c8c5d0","on-surface":"#131b2e","inverse-surface":"#283044","on-secondary-fixed":"#100563","on-tertiary":"#ffffff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter-mobile":"1rem","space-md":"1rem","space-xl":"2rem","gutter":"1.5rem","space-sm":"0.75rem","margin":"2rem","space-lg":"1.5rem","margin-mobile":"1rem","space-xs":"0.5rem"},"fontFamily":{"headline-xl":["Inter"],"label-lg":["Inter"],"headline-lg":["Inter"],"label-sm":["Inter"],"headline-xl-mobile":["Inter"],"body-md":["Inter"],"body-lg":["Inter"],"body-sm":["Inter"],"display-lg":["Inter"],"headline-md":["Inter"],"headline-sm":["Inter"],"display-lg-mobile":["Inter"],"label-md":["Inter"]},"fontSize":{"headline-xl":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}],"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"600"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"600"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"600"}],"headline-xl-mobile":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"22px","fontWeight":"400"}],"body-lg":["16px",{"lineHeight":"26px","fontWeight":"400"}],"body-sm":["12px",{"lineHeight":"18px","fontWeight":"400"}],"display-lg":["40px",{"lineHeight":"48px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.005em","fontWeight":"600"}],"headline-sm":["16px",{"lineHeight":"24px","fontWeight":"600"}],"display-lg-mobile":["30px",{"lineHeight":"38px","letterSpacing":"-0.015em","fontWeight":"700"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"500"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low z-50 flex flex-col justify-between py-space-md shadow-[1px_0_12px_rgba(0,0,0,0.03)]"><div class="flex flex-col"><div class="px-space-lg py-space-xs flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="Tor Lawyer Brand Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UlEmVbitxadC5YC7aOjnvQZDqEBzO0BDl3WLPE9mhoOijcMxq9qLMOanroFqsTxMoSDodGdKOC0K351EeX6rjbDJ7FBPawM8axZPqECLB095hpUuk2ObuVY18E8l3PiSb-w8-OKPQzcmOFu7bbGTr7K1RPOiqaX2isnG6Zeqq_otfBRfc0q88M16Sx2ckBH1jhT90hLApWb67DRF8vYaZJCeKa8vBckPvmkg9pFw3V83ACu-WU37ndixHX"/><span class="font-headline-sm text-headline-sm text-primary tracking-tight font-bold">Tor Lawyer</span></div></div><div class="mt-space-lg px-space-md"><div class="bg-surface-container-high rounded-full p-1 flex items-center justify-center gap-1 mb-space-md"><button class="flex-1 text-center py-1 rounded-full font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" type="button">বাংলা</button><button class="flex-1 text-center py-1 rounded-full font-label-sm text-label-sm bg-surface-container-lowest text-on-surface font-semibold shadow-sm" type="button">English</button></div></div><nav class="flex flex-col gap-1 px-space-md" data-active-classes="bg-primary-container text-on-primary font-semibold rounded-lg"><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-lg text-label-lg" data-path="dashboard" href="#">Dashboard</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-lg text-label-lg" data-path="new-review" href="#">New Review</a><a aria-current="page" class="flex items-center px-space-md py-space-sm transition-colors bg-primary-container text-on-primary font-semibold rounded-lg" data-path="my-documents" href="#">My Documents</a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-lg text-label-lg" data-path="create-agreement" href="#"><span>Create Agreement</span><span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm">Soon</span></a><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-lg text-label-lg" data-path="settings" href="#">Settings</a></nav></div><div class="px-space-md"><div class="p-space-sm bg-surface-container rounded-xl flex items-start gap-space-xs"><span class="material-symbols-outlined text-secondary text-[18px] mt-0.5">gavel</span><p class="font-label-sm text-label-sm text-on-surface-variant leading-tight">General information, not legal advice.</p></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-20 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-gutter"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs bg-surface-container-low px-space-md py-1.5 rounded-lg text-on-surface-variant font-body-sm text-body-sm"><span class="material-symbols-outlined text-[18px]">verified</span><span>Jurisdiction: Bangladesh Code</span></div></div><div class="flex items-center gap-space-md"><button class="p-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded-full transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span></button><button class="p-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded-full transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">help_outline</span></button><div class="flex items-center gap-space-sm pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-surface-container-high" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCO8wSXmU1smPsW-NviW7hFUODxvixhbeM-HtgNcc06wCPF4gODVLEhXilfd3SdCeI81_HYX1yxDPOUfMcA1x-IUa-RujyHUWqWIimvdHIQr7hKGnLxHVyqW5FPBIIjrPPhmGnrlNrThDHsii6z4Sp8sfSRXJFupIv8vuQxdl6UWqfm4Dc3Grp6uePKhxkO2wmPS6YuS2o1TW5vRB8v5xdStFzrPl9IIpox6gqlmWXfiXkJrSx7FCrhdA"/><div class="hidden sm:flex flex-col text-left"><span class="font-label-md text-label-md text-on-surface leading-tight font-medium">Tanvir</span></div></div></div></header><main class="relative pt-20 bg-background w-full px-gutter min-h-screen"><div class="flex flex-col w-full pb-space-xl">
+<!-- Motion Annotation Banner -->
+<div class="mb-space-lg rounded-xl bg-surface-container-high px-space-md py-space-sm flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">motion_mode</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant font-medium">
+<span class="font-bold text-on-surface">Motion Spec:</span> Document cards stagger in (60ms delay); hover lifts card 4px with soft ambient shadow; view toggle transitions smoothly; delete modal scales from 95% with 16px backdrop blur.
+      </p>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold uppercase tracking-wider">Royal Justice UI</span>
+</div>
+</div>
+<!-- Primary Header & Global Stats -->
+<header class="flex flex-col md:flex-row md:items-end justify-between gap-space-md pb-space-lg">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span>Tor Repository</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-on-surface font-semibold">Archived Audits &amp; Health Indexes</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-primary tracking-tight font-bold">My Documents</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        All statutory contract reviews, compliance health scores, and saved draft agreements under Bangladesh Code.
+      </p>
+</div>
+<!-- Quick Actions & CTA -->
+<div class="flex items-center gap-space-sm shrink-0">
+<button class="px-space-md py-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-lg text-label-lg transition-colors flex items-center gap-1.5 shadow-sm" onclick="toggleEmptyStateMock()" title="Toggle preview of zero documents state">
+<span class="material-symbols-outlined text-[18px]">filter_vintage</span>
+<span id="emptyStateBtnText">Simulate Empty</span>
+</button>
+<a class="px-space-lg py-2.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg flex items-center gap-2 shadow-md transition-all active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>+ New Review</span>
+</a>
+</div>
+</header>
+<!-- Filter & Control Toolbar -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm mb-space-lg flex flex-col gap-space-md">
+<div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-md">
+<!-- Search Input -->
+<div class="relative flex-1 max-w-2xl">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+<input class="w-full pl-10 pr-4 py-2.5 rounded-lg bg-surface-container-low text-on-surface placeholder:text-on-surface-variant/70 font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary-container transition-all" id="docSearchInput" placeholder="Search by agreement title, counterparty, or clause..." type="text"/>
+<span class="absolute right-3 top-1/2 -translate-y-1/2 text-[11px] font-label-sm text-on-surface-variant/60 bg-surface-container px-2 py-0.5 rounded">⌘K</span>
+</div>
+<!-- Controls: Sort & Grid/List Segmented Slider -->
+<div class="flex items-center justify-between sm:justify-end gap-space-md">
+<!-- Sort Control -->
+<div class="flex items-center gap-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="sortDropdown">Sort by:</label>
+<div class="relative">
+<select class="appearance-none bg-surface-container-low hover:bg-surface-container font-label-md text-label-md text-on-surface px-3 py-2 pr-8 rounded-lg cursor-pointer focus:outline-none transition-colors" id="sortDropdown">
+<option value="recent">Most recent</option>
+<option value="risk">Risk score (High to Low)</option>
+<option value="title">Document name (A-Z)</option>
+<option value="health">Statutory Health (High to Low)</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">expand_more</span>
+</div>
+</div>
+<!-- Segmented View Toggle -->
+<div class="bg-surface-container-high rounded-lg p-1 flex items-center">
+<button class="px-3 py-1.5 rounded font-label-md text-label-md flex items-center gap-1.5 bg-surface-container-lowest text-on-surface font-semibold shadow-sm transition-all" id="viewGridBtn" onclick="switchView('grid')">
+<span class="material-symbols-outlined text-[18px]">grid_view</span>
+<span class="hidden sm:inline">Grid</span>
+</button>
+<button class="px-3 py-1.5 rounded font-label-md text-label-md flex items-center gap-1.5 text-on-surface-variant hover:text-on-surface transition-all" id="viewListBtn" onclick="switchView('list')">
+<span class="material-symbols-outlined text-[18px]">view_list</span>
+<span class="hidden sm:inline">List</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Filter Category Chips -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1" id="filterChipsContainer">
+<button class="filter-chip active-filter px-3.5 py-1.5 rounded-full font-label-md text-label-md bg-primary text-on-primary transition-all shrink-0">
+        All (8)
+      </button>
+<button class="filter-chip px-3.5 py-1.5 rounded-full font-label-md text-label-md bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-all shrink-0">
+        House Rent (4)
+      </button>
+<button class="filter-chip px-3.5 py-1.5 rounded-full font-label-md text-label-md bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-all shrink-0">
+        Employment (2)
+      </button>
+<button class="filter-chip px-3.5 py-1.5 rounded-full font-label-md text-label-md bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-all shrink-0">
+        Service (2)
+      </button>
+<div class="h-4 w-px bg-surface-variant mx-1 shrink-0"></div>
+<button class="filter-chip px-3 py-1 rounded-full font-label-sm text-label-sm bg-error-container text-on-error-container transition-all shrink-0 flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+<span>High Risk (1)</span>
+</button>
+<button class="filter-chip px-3 py-1 rounded-full font-label-sm text-label-sm bg-surface-container text-on-secondary-fixed-variant transition-all shrink-0 flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>Consult Lawyer (1)</span>
+</button>
+</div>
+</section>
+<!-- Empty State Panel (Hidden by default, triggered by toggle) -->
+<section class="hidden flex-col items-center justify-center p-space-xl bg-surface-container-lowest rounded-xl shadow-sm text-center my-space-lg" id="emptyStateContainer">
+<div class="w-24 h-24 rounded-full bg-surface-container-low flex items-center justify-center mb-space-md text-primary-container">
+<span class="material-symbols-outlined text-[44px]">history_edu</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary font-bold mb-1">No Legal Agreements Found</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md mb-space-lg">
+      No documents match your active search filters or statutory parameters. Upload a tenancy deed, employment pact, or vendor agreement to start diagnostic AI analysis.
+    </p>
+<div class="flex items-center gap-space-sm">
+<button class="px-space-md py-2 rounded-lg bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-lg text-label-lg transition-colors" onclick="resetFiltersMock()">
+        Clear Filters
+      </button>
+<a class="px-space-md py-2 rounded-lg bg-primary text-on-primary font-label-lg text-label-lg hover:bg-primary-container shadow-sm flex items-center gap-1.5" href="#">
+<span class="material-symbols-outlined text-[18px]">upload_file</span>
+<span>Review Your First Agreement</span>
+</a>
+</div>
+</section>
+<!-- GRID VIEW CONTAINER (Default: 4 Columns desktop, responsive 1200px constraint) -->
+<section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-lg" id="documentsGridContainer">
+<!-- Document Card 1: Gulshan Flat 4B (Needs Changes) -->
+<article class="group bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between relative">
+<div>
+<!-- Card Header: Deed Thumbnail preview with Stamp & Action Dropdown -->
+<div class="relative h-32 rounded-lg bg-surface-container-low mb-space-md overflow-hidden flex flex-col justify-between p-3">
+<div class="absolute inset-0 bg-gradient-to-br from-surface-container-lowest/70 via-transparent to-surface-container-high/40 pointer-events-none"></div>
+<!-- Legal Stamp Mark & Type Pill -->
+<div class="flex items-center justify-between relative z-10">
+<span class="px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container-lowest/90 font-medium text-primary shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-secondary">home</span>
+<span>House Rent</span>
+</span>
+<div class="relative">
+<button class="w-7 h-7 rounded-full bg-surface-container-lowest/90 hover:bg-surface-container text-on-surface-variant flex items-center justify-center transition-colors shadow-sm" onclick="toggleActionMenu('menu-1')">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+<!-- Action Popover Menu -->
+<div class="hidden absolute right-0 top-8 w-44 bg-surface-container-lowest rounded-lg shadow-xl py-1 z-30" id="menu-1">
+<a class="flex items-center gap-2 px-3 py-2 font-label-sm text-label-sm text-on-surface hover:bg-surface-container-low" href="#">
+<span class="material-symbols-outlined text-[16px]">visibility</span> Open Full Report
+                </a>
+<a class="flex items-center gap-2 px-3 py-2 font-label-sm text-label-sm text-on-surface hover:bg-surface-container-low" href="#">
+<span class="material-symbols-outlined text-[16px]">download</span> Export PDF Dossier
+                </a>
+<button class="w-full text-left flex items-center gap-2 px-3 py-2 font-label-sm text-label-sm text-error hover:bg-error-container" onclick="openDeleteModal('House Rent Agreement - Gulshan 2 (Flat 4B)')">
+<span class="material-symbols-outlined text-[16px]">delete</span> Delete Record
+                </button>
+</div>
+</div>
+</div>
+<!-- Embossed Bangladesh Non-Judicial Stamp Representation -->
+<div class="flex items-end justify-between relative z-10 pt-4">
+<div class="flex items-center gap-1.5 opacity-80">
+<div class="w-6 h-6 rounded-full bg-surface-container-high flex items-center justify-center text-[10px] font-bold text-primary">৳300</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Stamp Deed</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Today</span>
+</div>
+</div>
+<!-- Title & Counterparty / Monetary Clause -->
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold line-clamp-1 mb-1 group-hover:text-primary-container transition-colors">
+          House Rent Agreement - Gulshan 2 (Flat 4B)
+        </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm flex items-center gap-2">
+<span>Rent: 45,000 BDT/mo</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span>12 Months Term</span>
+</p>
+<!-- Statutory Verdict & Red Flag Pill -->
+<div class="flex flex-wrap items-center gap-1.5 mb-space-md">
+<span class="px-2.5 py-1 rounded-full bg-amber-50 text-amber-800 font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+<span>Needs Changes</span>
+</span>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-medium">
+            3 Red Flags
+          </span>
+</div>
+</div>
+<!-- Card Footer: Metric Score & Health Bar -->
+<div class="pt-space-xs">
+<div class="flex items-center justify-between font-label-sm text-label-sm mb-1.5">
+<span class="text-on-surface-variant font-medium">Statutory Health</span>
+<span class="font-bold text-amber-800">62/100</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-amber-600 rounded-full" style="width: 62%"></div>
+</div>
+</div>
+</article>
+<!-- Document Card 2: Tech Ltd Employment (Looks Fine) -->
+<article class="group bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between relative">
+<div>
+<div class="relative h-32 rounded-lg bg-surface-container-low mb-space-md overflow-hidden flex flex-col justify-between p-3">
+<div class="absolute inset-0 bg-gradient-to-br from-surface-container-lowest/70 via-transparent to-surface-container-high/40 pointer-events-none"></div>
+<div class="flex items-center justify-between relative z-10">
+<span class="px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container-lowest/90 font-medium text-primary shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-secondary">badge</span>
+<span>Employment</span>
+</span>
+<div class="relative">
+<button class="w-7 h-7 rounded-full bg-surface-container-lowest/90 hover:bg-surface-container text-on-surface-variant flex items-center justify-center transition-colors shadow-sm" onclick="toggleActionMenu('menu-2')">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+<div class="hidden absolute right-0 top-8 w-44 bg-surface-container-lowest rounded-lg shadow-xl py-1 z-30" id="menu-2">
+<a class="flex items-center gap-2 px-3 py-2 font-label-sm text-label-sm text-on-surface hover:bg-surface-container-low" href="#">
+<span class="material-symbols-outlined text-[16px]">visibility</span> Open Full Report
+                </a>
+<a class="flex items-center gap-2 px-3 py-2 font-label-sm text-label-sm text-on-surface hover:bg-surface-container-low" href="#">
+<span class="material-symbols-outlined text-[16px]">download</span> Export PDF Dossier
+                </a>
+<button class="w-full text-left flex items-center gap-2 px-3 py-2 font-label-sm text-label-sm text-error hover:bg-error-container" onclick="openDeleteModal('Software Engineer Employment Contract - Tech Ltd')">
+<span class="material-symbols-outlined text-[16px]">delete</span> Delete Record
+                </button>
+</div>
+</div>
+</div>
+<div class="flex items-end justify-between relative z-10 pt-4">
+<div class="flex items-center gap-1.5 opacity-80">
+<div class="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center text-[10px] font-bold text-emerald-800">BD</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Labour Act, 2006</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Yesterday</span>
+</div>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold line-clamp-1 mb-1 group-hover:text-primary-container transition-colors">
+          Software Engineer Employment Contract - Tech Ltd
+        </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm flex items-center gap-2">
+<span>Full-time Permanent</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span>Gratuity &amp; PF</span>
+</p>
+<div class="flex flex-wrap items-center gap-1.5 mb-space-md">
+<span class="px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-800 font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span>Looks Fine</span>
+</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">
+            0 Red Flags
+          </span>
+</div>
+</div>
+<div class="pt-space-xs">
+<div class="flex items-center justify-between font-label-sm text-label-sm mb-1.5">
+<span class="text-on-surface-variant font-medium">Statutory Health</span>
+<span class="font-bold text-emerald-700">94/100</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-emerald-600 rounded-full" style="width: 94%"></div>
+</div>
+</div>
+</article>
+<!-- Document Card 3: Dhanmondi Commercial Lease (High Risk) -->
+<article class="group bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between relative">
+<div>
+<div class="relative h-32 rounded-lg bg-surface-container-low mb-space-md overflow-hidden flex flex-col justify-between p-3">
+<div class="absolute inset-0 bg-gradient-to-br from-error-container/20 via-transparent to-surface-container-high/40 pointer-events-none"></div>
+<div class="flex items-center justify-between relative z-10">
+<span class="px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container-lowest/90 font-medium text-primary shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-secondary">storefront</span>
+<span>Commercial Lease</span>
+</span>
+<div class="relative">
+<button class="w-7 h-7 rounded-full bg-surface-container-lowest/90 hover:bg-surface-container text-on-surface-variant flex items-center justify-center transition-colors shadow-sm" onclick="toggleActionMenu('menu-3')">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+<div class="hidden absolute right-0 top-8 w-44 bg-surface-container-lowest rounded-lg shadow-xl py-1 z-30" id="menu-3">
+<a class="flex items-center gap-2 px-3 py-2 font-label-sm text-label-sm text-on-surface hover:bg-surface-container-low" href="#">
+<span class="material-symbols-outlined text-[16px]">visibility</span> Open Full Report
+                </a>
+<a class="flex items-center gap-2 px-3 py-2 font-label-sm text-label-sm text-on-surface hover:bg-surface-container-low" href="#">
+<span class="material-symbols-outlined text-[16px]">download</span> Export PDF Dossier
+                </a>
+<button class="w-full text-left flex items-center gap-2 px-3 py-2 font-label-sm text-label-sm text-error hover:bg-error-container" onclick="openDeleteModal('Commercial Shop Lease - Dhanmondi Rd 27')">
+<span class="material-symbols-outlined text-[16px]">delete</span> Delete Record
+                </button>
+</div>
+</div>
+</div>
+<div class="flex items-end justify-between relative z-10 pt-4">
+<div class="flex items-center gap-1.5 opacity-80">
+<div class="w-6 h-6 rounded-full bg-error-container flex items-center justify-center text-[10px] font-bold text-on-error-container">৳1k</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Stamp Registry</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">12 May 2024</span>
+</div>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold line-clamp-1 mb-1 group-hover:text-primary-container transition-colors">
+          Commercial Shop Lease - Dhanmondi Rd 27
+        </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm flex items-center gap-2">
+<span>Unilateral Eviction Clause</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span>5 Yrs</span>
+</p>
+<div class="flex flex-wrap items-center gap-1.5 mb-space-md">
+<span class="px-2.5 py-1 rounded-full bg-rose-50 text-rose-800 font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">gpp_maybe</span>
+<span>High Risk</span>
+</span>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-bold">
+            5 Red Flags
+          </span>
+</div>
+</div>
+<div class="pt-space-xs">
+<div class="flex items-center justify-between font-label-sm text-label-sm mb-1.5">
+<span class="text-on-surface-variant font-medium">Statutory Health</span>
+<span class="font-bold text-rose-700">41/100</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-error rounded-full" style="width: 41%"></div>
+</div>
+</div>
+</article>
+<!-- Document Card 4: Digital Marketing Retainer (Looks Fine) -->
+<article class="group bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between relative">
+<div>
+<div class="relative h-32 rounded-lg bg-surface-container-low mb-space-md overflow-hidden flex flex-col justify-between p-3">
+<div class="absolute inset-0 bg-gradient-to-br from-surface-container-lowest/70 via-transparent to-surface-container-high/40 pointer-events-none"></div>
+<div class="flex items-center justify-between relative z-10">
+<span class="px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container-lowest/90 font-medium text-primary shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-secondary">handshake</span>
+<span>Service</span>
+</span>
+<div class="relative">
+<button class="w-7 h-7 rounded-full bg-surface-container-lowest/90 hover:bg-surface-container text-on-surface-variant flex items-center justify-center transition-colors shadow-sm" onclick="toggleActionMenu('menu-4')">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+<div class="hidden absolute right-0 top-8 w-44 bg-surface-container-lowest rounded-lg shadow-xl py-1 z-30" id="menu-4">
+<a class="flex items-center gap-2 px-3 py-2 font-label-sm text-label-sm text-on-surface hover:bg-surface-container-low" href="#">
+<span class="material-symbols-outlined text-[16px]">visibility</span> Open Full Report
+                </a>
+<a class="flex items-center gap-2 px-3 py-2 font-label-sm text-label-sm text-on-surface hover:bg-surface-container-low" href="#">
+<span class="material-symbols-outlined text-[16px]">download</span> Export PDF Dossier
+                </a>
+<button class="w-full text-left flex items-center gap-2 px-3 py-2 font-label-sm text-label-sm text-error hover:bg-error-container" onclick="openDeleteModal('Digital Marketing Retainer Agreement')">
+<span class="material-symbols-outlined text-[16px]">delete</span> Delete Record
+                </button>
+</div>
+</div>
+</div>
+<div class="flex items-end justify-between relative z-10 pt-4">
+<div class="flex items-center gap-1.5 opacity-80">
+<div class="w-6 h-6 rounded-full bg-secondary-fixed flex items-center justify-center text-[10px] font-bold text-on-secondary-fixed-variant">SLA</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Contract Act 1872</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">8 May 2024</span>
+</div>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold line-clamp-1 mb-1 group-hover:text-primary-container transition-colors">
+          Digital Marketing Retainer Agreement
+        </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm flex items-center gap-2">
+<span>IP Ownership Assured</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span>Bimonthly</span>
+</p>
+<div class="flex flex-wrap items-center gap-1.5 mb-space-md">
+<span class="px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-800 font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span>Looks Fine</span>
+</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">
+            0 Red Flags
+          </span>
+</div>
+</div>
+<div class="pt-space-xs">
+<div class="flex items-center justify-between font-label-sm text-label-sm mb-1.5">
+<span class="text-on-surface-variant font-medium">Statutory Health</span>
+<span class="font-bold text-emerald-700">88/100</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-emerald-600 rounded-full" style="width: 88%"></div>
+</div>
+</div>
+</article>
+<!-- Document Card 5: Apartment Tenancy Deed - Banani (Needs Changes) -->
+<article class="group bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between relative">
+<div>
+<div class="relative h-32 rounded-lg bg-surface-container-low mb-space-md overflow-hidden flex flex-col justify-between p-3">
+<div class="absolute inset-0 bg-gradient-to-br from-surface-container-lowest/70 via-transparent to-surface-container-high/40 pointer-events-none"></div>
+<div class="flex items-center justify-between relative z-10">
+<span class="px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container-lowest/90 font-medium text-primary shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-secondary">home</span>
+<span>House Rent</span>
+</span>
+<div class="relative">
+<button class="w-7 h-7 rounded-full bg-surface-container-lowest/90 hover:bg-surface-container text-on-surface-variant flex items-center justify-center transition-colors shadow-sm" onclick="toggleActionMenu('menu-5')">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+<div class="hidden absolute right-0 top-8 w-44 bg-surface-container-lowest rounded-lg shadow-xl py-1 z-30" id="menu-5">
+<a class="flex items-center gap-2 px-3 py-2 font-label-sm text-label-sm text-on-surface hover:bg-surface-container-low" href="#">
+<span class="material-symbols-outlined text-[16px]">visibility</span> Open Full Report
+                </a>
+<a class="flex items-center gap-2 px-3 py-2 font-label-sm text-label-sm text-on-surface hover:bg-surface-container-low" href="#">
+<span class="material-symbols-outlined text-[16px]">download</span> Export PDF Dossier
+                </a>
+<button class="w-full text-left flex items-center gap-2 px-3 py-2 font-label-sm text-label-sm text-error hover:bg-error-container" onclick="openDeleteModal('Apartment Tenancy Deed - Banani Block D')">
+<span class="material-symbols-outlined text-[16px]">delete</span> Delete Record
+                </button>
+</div>
+</div>
+</div>
+<div class="flex items-end justify-between relative z-10 pt-4">
+<div class="flex items-center gap-1.5 opacity-80">
+<div class="w-6 h-6 rounded-full bg-surface-container-high flex items-center justify-center text-[10px] font-bold text-primary">৳300</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Deed Stamp</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">2 May 2024</span>
+</div>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold line-clamp-1 mb-1 group-hover:text-primary-container transition-colors">
+          Apartment Tenancy Deed - Banani Block D
+        </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm flex items-center gap-2">
+<span>Security Deposit dispute</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span>Residential</span>
+</p>
+<div class="flex flex-wrap items-center gap-1.5 mb-space-md">
+<span class="px-2.5 py-1 rounded-full bg-amber-50 text-amber-800 font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+<span>Needs Changes</span>
+</span>
+<span class="px-2 py-0.5 rounded-full bg-amber-100 text-amber-900 font-label-sm text-label-sm">
+            2 Warnings
+          </span>
+</div>
+</div>
+<div class="pt-space-xs">
+<div class="flex items-center justify-between font-label-sm text-label-sm mb-1.5">
+<span class="text-on-surface-variant font-medium">Statutory Health</span>
+<span class="font-bold text-amber-800">65/100</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-amber-600 rounded-full" style="width: 65%"></div>
+</div>
+</div>
+</article>
+<!-- Document Card 6: Consultancy Agreement - FinTech Dhaka (Consult Lawyer) -->
+<article class="group bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between relative">
+<div>
+<div class="relative h-32 rounded-lg bg-surface-container-low mb-space-md overflow-hidden flex flex-col justify-between p-3">
+<div class="absolute inset-0 bg-gradient-to-br from-secondary-fixed/20 via-transparent to-surface-container-high/40 pointer-events-none"></div>
+<div class="flex items-center justify-between relative z-10">
+<span class="px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container-lowest/90 font-medium text-primary shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-secondary">gavel</span>
+<span>Service</span>
+</span>
+<div class="relative">
+<button class="w-7 h-7 rounded-full bg-surface-container-lowest/90 hover:bg-surface-container text-on-surface-variant flex items-center justify-center transition-colors shadow-sm" onclick="toggleActionMenu('menu-6')">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+<div class="hidden absolute right-0 top-8 w-44 bg-surface-container-lowest rounded-lg shadow-xl py-1 z-30" id="menu-6">
+<a class="flex items-center gap-2 px-3 py-2 font-label-sm text-label-sm text-on-surface hover:bg-surface-container-low" href="#">
+<span class="material-symbols-outlined text-[16px]">visibility</span> Open Full Report
+                </a>
+<a class="flex items-center gap-2 px-3 py-2 font-label-sm text-label-sm text-on-surface hover:bg-surface-container-low" href="#">
+<span class="material-symbols-outlined text-[16px]">download</span> Export PDF Dossier
+                </a>
+<button class="w-full text-left flex items-center gap-2 px-3 py-2 font-label-sm text-label-sm text-error hover:bg-error-container" onclick="openDeleteModal('Consultancy Agreement - FinTech Dhaka')">
+<span class="material-symbols-outlined text-[16px]">delete</span> Delete Record
+                </button>
+</div>
+</div>
+</div>
+<div class="flex items-end justify-between relative z-10 pt-4">
+<div class="flex items-center gap-1.5 opacity-80">
+<div class="w-6 h-6 rounded-full bg-primary-fixed flex items-center justify-center text-[10px] font-bold text-on-primary-fixed">FX</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Cross-Border</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">28 Apr 2024</span>
+</div>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold line-clamp-1 mb-1 group-hover:text-primary-container transition-colors">
+          Consultancy Agreement - FinTech Dhaka
+        </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm flex items-center gap-2">
+<span>Foreign Remittance Tax</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span>Ambiguous IP</span>
+</p>
+<div class="flex flex-wrap items-center gap-1.5 mb-space-md">
+<span class="px-2.5 py-1 rounded-full bg-indigo-50 text-indigo-800 font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">balance</span>
+<span>Consult a Lawyer</span>
+</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-medium">
+            Cross-Border
+          </span>
+</div>
+</div>
+<div class="pt-space-xs">
+<div class="flex items-center justify-between font-label-sm text-label-sm mb-1.5">
+<span class="text-on-surface-variant font-medium">Statutory Health</span>
+<span class="font-bold text-indigo-700">58/100</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 58%"></div>
+</div>
+</div>
+</article>
+<!-- Document Card 7: Uttara Sector 11 Sub-lease (Needs Changes) -->
+<article class="group bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between relative">
+<div>
+<div class="relative h-32 rounded-lg bg-surface-container-low mb-space-md overflow-hidden flex flex-col justify-between p-3">
+<div class="absolute inset-0 bg-gradient-to-br from-surface-container-lowest/70 via-transparent to-surface-container-high/40 pointer-events-none"></div>
+<div class="flex items-center justify-between relative z-10">
+<span class="px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container-lowest/90 font-medium text-primary shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-secondary">domain</span>
+<span>House Rent</span>
+</span>
+<div class="relative">
+<button class="w-7 h-7 rounded-full bg-surface-container-lowest/90 hover:bg-surface-container text-on-surface-variant flex items-center justify-center transition-colors shadow-sm" onclick="toggleActionMenu('menu-7')">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+<div class="hidden absolute right-0 top-8 w-44 bg-surface-container-lowest rounded-lg shadow-xl py-1 z-30" id="menu-7">
+<a class="flex items-center gap-2 px-3 py-2 font-label-sm text-label-sm text-on-surface hover:bg-surface-container-low" href="#">
+<span class="material-symbols-outlined text-[16px]">visibility</span> Open Full Report
+                </a>
+<a class="flex items-center gap-2 px-3 py-2 font-label-sm text-label-sm text-on-surface hover:bg-surface-container-low" href="#">
+<span class="material-symbols-outlined text-[16px]">download</span> Export PDF Dossier
+                </a>
+<button class="w-full text-left flex items-center gap-2 px-3 py-2 font-label-sm text-label-sm text-error hover:bg-error-container" onclick="openDeleteModal('Sub-lease Agreement - Uttara Sector 11')">
+<span class="material-symbols-outlined text-[16px]">delete</span> Delete Record
+                </button>
+</div>
+</div>
+</div>
+<div class="flex items-end justify-between relative z-10 pt-4">
+<div class="flex items-center gap-1.5 opacity-80">
+<div class="w-6 h-6 rounded-full bg-surface-container-high flex items-center justify-center text-[10px] font-bold text-primary">৳300</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Premises Rent</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">15 Apr 2024</span>
+</div>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold line-clamp-1 mb-1 group-hover:text-primary-container transition-colors">
+          Sub-lease Agreement - Uttara Sector 11
+        </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm flex items-center gap-2">
+<span>Sub-letting consent missing</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span>1 Yr</span>
+</p>
+<div class="flex flex-wrap items-center gap-1.5 mb-space-md">
+<span class="px-2.5 py-1 rounded-full bg-amber-50 text-amber-800 font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+<span>Needs Changes</span>
+</span>
+<span class="px-2 py-0.5 rounded-full bg-amber-100 text-amber-900 font-label-sm text-label-sm">
+            1 Red Flag
+          </span>
+</div>
+</div>
+<div class="pt-space-xs">
+<div class="flex items-center justify-between font-label-sm text-label-sm mb-1.5">
+<span class="text-on-surface-variant font-medium">Statutory Health</span>
+<span class="font-bold text-amber-800">70/100</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-amber-600 rounded-full" style="width: 70%"></div>
+</div>
+</div>
+</article>
+<!-- Document Card 8: Senior Product Designer (Looks Fine) -->
+<article class="group bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between relative">
+<div>
+<div class="relative h-32 rounded-lg bg-surface-container-low mb-space-md overflow-hidden flex flex-col justify-between p-3">
+<div class="absolute inset-0 bg-gradient-to-br from-surface-container-lowest/70 via-transparent to-surface-container-high/40 pointer-events-none"></div>
+<div class="flex items-center justify-between relative z-10">
+<span class="px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container-lowest/90 font-medium text-primary shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-secondary">badge</span>
+<span>Employment</span>
+</span>
+<div class="relative">
+<button class="w-7 h-7 rounded-full bg-surface-container-lowest/90 hover:bg-surface-container text-on-surface-variant flex items-center justify-center transition-colors shadow-sm" onclick="toggleActionMenu('menu-8')">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+<div class="hidden absolute right-0 top-8 w-44 bg-surface-container-lowest rounded-lg shadow-xl py-1 z-30" id="menu-8">
+<a class="flex items-center gap-2 px-3 py-2 font-label-sm text-label-sm text-on-surface hover:bg-surface-container-low" href="#">
+<span class="material-symbols-outlined text-[16px]">visibility</span> Open Full Report
+                </a>
+<a class="flex items-center gap-2 px-3 py-2 font-label-sm text-label-sm text-on-surface hover:bg-surface-container-low" href="#">
+<span class="material-symbols-outlined text-[16px]">download</span> Export PDF Dossier
+                </a>
+<button class="w-full text-left flex items-center gap-2 px-3 py-2 font-label-sm text-label-sm text-error hover:bg-error-container" onclick="openDeleteModal('Senior Product Designer Offer &amp; Agreement')">
+<span class="material-symbols-outlined text-[16px]">delete</span> Delete Record
+                </button>
+</div>
+</div>
+</div>
+<div class="flex items-end justify-between relative z-10 pt-4">
+<div class="flex items-center gap-1.5 opacity-80">
+<div class="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center text-[10px] font-bold text-emerald-800">HR</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Bangla Code Compliant</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">10 Apr 2024</span>
+</div>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold line-clamp-1 mb-1 group-hover:text-primary-container transition-colors">
+          Senior Product Designer Offer &amp; Agreement
+        </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm flex items-center gap-2">
+<span>Stock Option Clause</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span>Notice Period 60d</span>
+</p>
+<div class="flex flex-wrap items-center gap-1.5 mb-space-md">
+<span class="px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-800 font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span>Looks Fine</span>
+</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">
+            0 Red Flags
+          </span>
+</div>
+</div>
+<div class="pt-space-xs">
+<div class="flex items-center justify-between font-label-sm text-label-sm mb-1.5">
+<span class="text-on-surface-variant font-medium">Statutory Health</span>
+<span class="font-bold text-emerald-700">92/100</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-emerald-600 rounded-full" style="width: 92%"></div>
+</div>
+</div>
+</article>
+</section>
+<!-- LIST VIEW CONTAINER (Alternative compact tabular representation) -->
+<section class="hidden flex-col bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden" id="documentsListContainer">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm border-b-0">
+<th class="py-3 px-4 font-semibold">Document Title</th>
+<th class="py-3 px-4 font-semibold">Category</th>
+<th class="py-3 px-4 font-semibold">Audit Date</th>
+<th class="py-3 px-4 font-semibold">Verdict</th>
+<th class="py-3 px-4 font-semibold text-right">Health Score</th>
+<th class="py-3 px-4 font-semibold text-center">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-on-surface font-body-sm text-body-sm">
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3.5 px-4 font-semibold text-primary">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">home</span>
+<span>House Rent Agreement - Gulshan 2 (Flat 4B)</span>
+</div>
+</td>
+<td class="py-3.5 px-4 text-on-surface-variant">House Rent</td>
+<td class="py-3.5 px-4 text-on-surface-variant">Today</td>
+<td class="py-3.5 px-4">
+<span class="px-2.5 py-0.5 rounded-full bg-amber-50 text-amber-800 font-label-sm text-label-sm font-semibold inline-flex items-center gap-1">
+<span>Needs Changes</span> (3 Flags)
+              </span>
+</td>
+<td class="py-3.5 px-4 text-right font-bold text-amber-800">62/100</td>
+<td class="py-3.5 px-4 text-center">
+<button class="p-1.5 rounded hover:bg-error-container text-error transition-colors" onclick="openDeleteModal('House Rent Agreement - Gulshan 2 (Flat 4B)')" title="Delete">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3.5 px-4 font-semibold text-primary">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">badge</span>
+<span>Software Engineer Employment Contract - Tech Ltd</span>
+</div>
+</td>
+<td class="py-3.5 px-4 text-on-surface-variant">Employment</td>
+<td class="py-3.5 px-4 text-on-surface-variant">Yesterday</td>
+<td class="py-3.5 px-4">
+<span class="px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 font-label-sm text-label-sm font-semibold inline-flex items-center gap-1">
+<span>Looks Fine</span>
+</span>
+</td>
+<td class="py-3.5 px-4 text-right font-bold text-emerald-700">94/100</td>
+<td class="py-3.5 px-4 text-center">
+<button class="p-1.5 rounded hover:bg-error-container text-error transition-colors" onclick="openDeleteModal('Software Engineer Employment Contract - Tech Ltd')" title="Delete">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3.5 px-4 font-semibold text-primary">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">storefront</span>
+<span>Commercial Shop Lease - Dhanmondi Rd 27</span>
+</div>
+</td>
+<td class="py-3.5 px-4 text-on-surface-variant">House Rent</td>
+<td class="py-3.5 px-4 text-on-surface-variant">12 May 2024</td>
+<td class="py-3.5 px-4">
+<span class="px-2.5 py-0.5 rounded-full bg-rose-50 text-rose-800 font-label-sm text-label-sm font-bold inline-flex items-center gap-1">
+<span>High Risk</span> (5 Flags)
+              </span>
+</td>
+<td class="py-3.5 px-4 text-right font-bold text-rose-700">41/100</td>
+<td class="py-3.5 px-4 text-center">
+<button class="p-1.5 rounded hover:bg-error-container text-error transition-colors" onclick="openDeleteModal('Commercial Shop Lease - Dhanmondi Rd 27')" title="Delete">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3.5 px-4 font-semibold text-primary">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">handshake</span>
+<span>Digital Marketing Retainer Agreement</span>
+</div>
+</td>
+<td class="py-3.5 px-4 text-on-surface-variant">Service</td>
+<td class="py-3.5 px-4 text-on-surface-variant">8 May 2024</td>
+<td class="py-3.5 px-4">
+<span class="px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 font-label-sm text-label-sm font-semibold inline-flex items-center gap-1">
+<span>Looks Fine</span>
+</span>
+</td>
+<td class="py-3.5 px-4 text-right font-bold text-emerald-700">88/100</td>
+<td class="py-3.5 px-4 text-center">
+<button class="p-1.5 rounded hover:bg-error-container text-error transition-colors" onclick="openDeleteModal('Digital Marketing Retainer Agreement')" title="Delete">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3.5 px-4 font-semibold text-primary">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">home</span>
+<span>Apartment Tenancy Deed - Banani Block D</span>
+</div>
+</td>
+<td class="py-3.5 px-4 text-on-surface-variant">House Rent</td>
+<td class="py-3.5 px-4 text-on-surface-variant">2 May 2024</td>
+<td class="py-3.5 px-4">
+<span class="px-2.5 py-0.5 rounded-full bg-amber-50 text-amber-800 font-label-sm text-label-sm font-semibold inline-flex items-center gap-1">
+<span>Needs Changes</span>
+</span>
+</td>
+<td class="py-3.5 px-4 text-right font-bold text-amber-800">65/100</td>
+<td class="py-3.5 px-4 text-center">
+<button class="p-1.5 rounded hover:bg-error-container text-error transition-colors" onclick="openDeleteModal('Apartment Tenancy Deed - Banani Block D')" title="Delete">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3.5 px-4 font-semibold text-primary">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">gavel</span>
+<span>Consultancy Agreement - FinTech Dhaka</span>
+</div>
+</td>
+<td class="py-3.5 px-4 text-on-surface-variant">Service</td>
+<td class="py-3.5 px-4 text-on-surface-variant">28 Apr 2024</td>
+<td class="py-3.5 px-4">
+<span class="px-2.5 py-0.5 rounded-full bg-indigo-50 text-indigo-800 font-label-sm text-label-sm font-semibold inline-flex items-center gap-1">
+<span>Consult a Lawyer</span>
+</span>
+</td>
+<td class="py-3.5 px-4 text-right font-bold text-indigo-700">58/100</td>
+<td class="py-3.5 px-4 text-center">
+<button class="p-1.5 rounded hover:bg-error-container text-error transition-colors" onclick="openDeleteModal('Consultancy Agreement - FinTech Dhaka')" title="Delete">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3.5 px-4 font-semibold text-primary">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">domain</span>
+<span>Sub-lease Agreement - Uttara Sector 11</span>
+</div>
+</td>
+<td class="py-3.5 px-4 text-on-surface-variant">House Rent</td>
+<td class="py-3.5 px-4 text-on-surface-variant">15 Apr 2024</td>
+<td class="py-3.5 px-4">
+<span class="px-2.5 py-0.5 rounded-full bg-amber-50 text-amber-800 font-label-sm text-label-sm font-semibold inline-flex items-center gap-1">
+<span>Needs Changes</span>
+</span>
+</td>
+<td class="py-3.5 px-4 text-right font-bold text-amber-800">70/100</td>
+<td class="py-3.5 px-4 text-center">
+<button class="p-1.5 rounded hover:bg-error-container text-error transition-colors" onclick="openDeleteModal('Sub-lease Agreement - Uttara Sector 11')" title="Delete">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3.5 px-4 font-semibold text-primary">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">badge</span>
+<span>Senior Product Designer Offer &amp; Agreement</span>
+</div>
+</td>
+<td class="py-3.5 px-4 text-on-surface-variant">Employment</td>
+<td class="py-3.5 px-4 text-on-surface-variant">10 Apr 2024</td>
+<td class="py-3.5 px-4">
+<span class="px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 font-label-sm text-label-sm font-semibold inline-flex items-center gap-1">
+<span>Looks Fine</span>
+</span>
+</td>
+<td class="py-3.5 px-4 text-right font-bold text-emerald-700">92/100</td>
+<td class="py-3.5 px-4 text-center">
+<button class="p-1.5 rounded hover:bg-error-container text-error transition-colors" onclick="openDeleteModal('Senior Product Designer Offer &amp; Agreement')" title="Delete">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Delete Confirmation Modal Overlay -->
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center p-4" id="deleteModal">
+<!-- Backdrop Blur Scrim -->
+<div class="absolute inset-0 bg-primary/40 backdrop-blur-md" onclick="closeDeleteModal()"></div>
+<!-- Modal Content Card -->
+<div class="relative w-full max-w-md bg-surface-container-lowest rounded-xl shadow-2xl p-space-lg transform transition-all scale-100 flex flex-col gap-space-md z-10">
+<div class="w-12 h-12 rounded-full bg-error-container text-error flex items-center justify-center">
+<span class="material-symbols-outlined text-[26px]">delete_forever</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold mb-1">Delete this document?</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          This will permanently remove the analysis dossier and risk logs for <span class="font-semibold text-on-surface" id="deleteDocTitle"></span> from your archive. This action cannot be reversed.
+        </p>
+</div>
+<div class="flex items-center justify-end gap-space-sm pt-space-xs">
+<button class="px-space-md py-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-lg text-label-lg transition-colors" onclick="closeDeleteModal()">
+          Cancel
+        </button>
+<button class="px-space-md py-2 rounded-lg bg-error hover:bg-error/90 text-on-error font-label-lg text-label-lg shadow-md transition-colors flex items-center gap-1.5" onclick="confirmDeleteMock()">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+<span>Delete Document</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Document Action Toast (Micro-feedback) -->
+<div class="fixed bottom-6 right-6 z-50 bg-primary text-on-primary px-space-md py- space-sm rounded-lg shadow-xl flex items-center gap-2 opacity-0 pointer-events-none transition-opacity duration-300" id="actionToast">
+<span class="material-symbols-outlined text-[18px] text-primary-fixed">check_circle</span>
+<span class="font-label-sm text-label-sm font-medium" id="toastMsg">Record updated successfully</span>
+</div>
+</div>
+<script>
+  // Dynamic active tab highlighting for Shell navigation
+  document.addEventListener("DOMContentLoaded", () => {
+    const navLinks = document.querySelectorAll("aside nav a");
+    navLinks.forEach((link) => {
+      if (link.getAttribute("data-path") === "my-documents") {
+        link.className = "flex items-center px-space-md py-space-sm rounded-lg bg-primary-container text-on-primary font-semibold font-label-lg text-label-lg shadow-sm";
+      } else {
+        link.classList.remove("bg-primary-container", "text-on-primary", "font-semibold");
+      }
+    });
+  });
+
+  // Switch between Grid and List representations
+  function switchView(viewType) {
+    const grid = document.getElementById("documentsGridContainer");
+    const list = document.getElementById("documentsListContainer");
+    const gridBtn = document.getElementById("viewGridBtn");
+    const listBtn = document.getElementById("viewListBtn");
+
+    if (viewType === 'grid') {
+      grid.classList.remove("hidden");
+      list.classList.add("hidden");
+      gridBtn.className = "px-3 py-1.5 rounded font-label-md text-label-md flex items-center gap-1.5 bg-surface-container-lowest text-on-surface font-semibold shadow-sm transition-all";
+      listBtn.className = "px-3 py-1.5 rounded font-label-md text-label-md flex items-center gap-1.5 text-on-surface-variant hover:text-on-surface transition-all";
+    } else {
+      grid.classList.add("hidden");
+      list.classList.remove("hidden");
+      listBtn.className = "px-3 py-1.5 rounded font-label-md text-label-md flex items-center gap-1.5 bg-surface-container-lowest text-on-surface font-semibold shadow-sm transition-all";
+      gridBtn.className = "px-3 py-1.5 rounded font-label-md text-label-md flex items-center gap-1.5 text-on-surface-variant hover:text-on-surface transition-all";
+    }
+  }
+
+  // Toggle dropdown actions
+  let activeMenuId = null;
+  function toggleActionMenu(menuId) {
+    const menu = document.getElementById(menuId);
+    if (activeMenuId && activeMenuId !== menuId) {
+      const prev = document.getElementById(activeMenuId);
+      if (prev) prev.classList.add("hidden");
+    }
+    if (menu) {
+      menu.classList.toggle("hidden");
+      activeMenuId = menu.classList.contains("hidden") ? null : menuId;
+    }
+  }
+
+  // Close menus on outside click
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest("button[onclick^='toggleActionMenu']") && !e.target.closest("[id^='menu-']")) {
+      if (activeMenuId) {
+        const menu = document.getElementById(activeMenuId);
+        if (menu) menu.classList.add("hidden");
+        activeMenuId = null;
+      }
+    }
+  });
+
+  // Delete Modal Operations
+  function openDeleteModal(docTitle) {
+    const modal = document.getElementById("deleteModal");
+    const titleHolder = document.getElementById("deleteDocTitle");
+    if (titleHolder) titleHolder.textContent = docTitle;
+    if (modal) modal.classList.remove("hidden");
+  }
+
+  function closeDeleteModal() {
+    const modal = document.getElementById("deleteModal");
+    if (modal) modal.classList.add("hidden");
+  }
+
+  function confirmDeleteMock() {
+    closeDeleteModal();
+    showToast("Document deleted successfully from archive");
+  }
+
+  // Empty State Preview toggle
+  let isEmptySimulated = false;
+  function toggleEmptyStateMock() {
+    const grid = document.getElementById("documentsGridContainer");
+    const list = document.getElementById("documentsListContainer");
+    const empty = document.getElementById("emptyStateContainer");
+    const btnText = document.getElementById("emptyStateBtnText");
+
+    isEmptySimulated = !isEmptySimulated;
+    if (isEmptySimulated) {
+      grid.classList.add("hidden");
+      list.classList.add("hidden");
+      empty.classList.remove("hidden");
+      empty.classList.add("flex");
+      if (btnText) btnText.textContent = "Restore Docs";
+    } else {
+      empty.classList.add("hidden");
+      empty.classList.remove("flex");
+      switchView('grid');
+      if (btnText) btnText.textContent = "Simulate Empty";
+    }
+  }
+
+  function resetFiltersMock() {
+    toggleEmptyStateMock();
+    showToast("All filters restored to initial overview");
+  }
+
+  // Micro feedback toast
+  function showToast(msg) {
+    const toast = document.getElementById("actionToast");
+    const toastMsg = document.getElementById("toastMsg");
+    if (toast && toastMsg) {
+      toastMsg.textContent = msg;
+      toast.classList.remove("opacity-0", "pointer-events-none");
+      toast.classList.add("opacity-100");
+      setTimeout(() => {
+        toast.classList.remove("opacity-100");
+        toast.classList.add("opacity-0", "pointer-events-none");
+      }, 3000);
+    }
+  }
+</script></main></div></body></html>

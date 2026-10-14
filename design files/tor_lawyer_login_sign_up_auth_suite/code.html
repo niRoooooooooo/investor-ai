@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tor Lawyer - Legal AI Authentication</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "midnight": "#1E1B4B",
+            "midnight-deep": "#110E38",
+            "royal-cobalt": "#312E81",
+            "royal-blue": "#2563EB",
+            "royal-blue-hover": "#1D4ED8",
+            "crimson": "#E11D48",
+            "olive": "#15803D",
+            "warm-amber": "#B45309",
+            "surface-light": "#F8FAFC",
+            "surface-card": "#FFFFFF",
+            "border-subtle": "#E2E8F0"
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            bangla: ['Noto Sans Bengali', 'Inter', 'sans-serif']
+          },
+          boxShadow: {
+            'glow-cobalt': '0 0 50px -10px rgba(49, 46, 129, 0.5)',
+            'glow-crimson': '0 8px 24px -4px rgba(225, 29, 72, 0.3)',
+            'glow-olive': '0 8px 24px -4px rgba(21, 128, 61, 0.3)',
+            'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.25)',
+            'card-elevated': '0 20px 40px -15px rgba(15, 23, 42, 0.08), 0 0 1px 1px rgba(15, 23, 42, 0.05)'
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    @keyframes floatCenter {
+      0% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(0.4deg); }
+      100% { transform: translateY(0px) rotate(0deg); }
+    }
+    @keyframes chipDrift1 {
+      0% { transform: translateY(0px) translateX(0px); }
+      50% { transform: translateY(-7px) translateX(3px); }
+      100% { transform: translateY(0px) translateX(0px); }
+    }
+    @keyframes chipDrift2 {
+      0% { transform: translateY(0px) translateX(0px); }
+      50% { transform: translateY(8px) translateX(-4px); }
+      100% { transform: translateY(0px) translateX(0px); }
+    }
+    @keyframes chipDrift3 {
+      0% { transform: translateY(0px) translateX(0px); }
+      50% { transform: translateY(-9px) translateX(-3px); }
+      100% { transform: translateY(0px) translateX(0px); }
+    }
+    @keyframes cardEnter {
+      0% { opacity: 0; transform: translateY(24px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes shakeRow {
+      0%, 100% { transform: translateX(0); }
+      20%, 60% { transform: translateX(-8px); }
+      40%, 80% { transform: translateX(8px); }
+    }
+    @keyframes drawCheck {
+      0% { stroke-dashoffset: 48; }
+      100% { stroke-dashoffset: 0; }
+    }
+    @keyframes pulseScale {
+      0% { transform: scale(0.9); opacity: 0; }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .animate-float-slow {
+      animation: floatCenter 4s ease-in-out infinite;
+    }
+    .animate-chip-1 {
+      animation: chipDrift1 4.5s ease-in-out infinite;
+    }
+    .animate-chip-2 {
+      animation: chipDrift2 5.2s ease-in-out infinite;
+    }
+    .animate-chip-3 {
+      animation: chipDrift3 4.8s ease-in-out infinite;
+    }
+    .animate-card-slide {
+      animation: cardEnter 300ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .animate-shake {
+      animation: shakeRow 0.4s ease-in-out;
+    }
+    .stroke-draw {
+      stroke-dasharray: 48;
+      stroke-dashoffset: 48;
+      animation: drawCheck 0.55s ease-out forwards 0.15s;
+    }
+    .otp-input:focus {
+      transform: scale(1.05);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .animate-float-slow, .animate-chip-1, .animate-chip-2, .animate-chip-3, .animate-card-slide, .animate-shake {
+        animation: none !important;
+        transform: none !important;
+      }
+      .stroke-draw {
+        stroke-dashoffset: 0 !important;
+        animation: none !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-slate-100 font-sans text-slate-900 antialiased min-h-screen flex flex-col items-center justify-start p-2 sm:p-4 md:p-6 lg:p-8">
+<!-- TOP WRAPPER / ANNOTATION & STATE SWITCHER -->
+<header class="w-full max-w-[1440px] mb-4 space-y-2.5">
+<!-- Motion Spec Annotation -->
+<div class="w-full flex items-center justify-between px-4 py-2.5 rounded-xl bg-white border border-slate-200/80 shadow-sm text-xs text-slate-600">
+<div class="flex items-center gap-2 overflow-hidden">
+<span class="material-symbols-outlined text-royal-blue text-[18px] shrink-0">motion_photos_on</span>
+<p class="truncate">
+<strong class="text-slate-800">Motion Spec:</strong> Left illustration floats slowly (4s loop); 3 floating chips drift with varied parallax; card slides up 24px and fades in 300ms; tab switch slides highlight pill smoothly; code boxes bounce on input; wrong code shakes row; success checkmark draws SVG stroke; respects prefers-reduced-motion.
+        </p>
+</div>
+<span class="shrink-0 ml-3 inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-slate-100 text-royal-cobalt font-medium text-[11px] border border-slate-200">
+<span class="w-1.5 h-1.5 rounded-full bg-royal-blue"></span>
+        SCREEN_8 Spec
+      </span>
+</div>
+<!-- Interactive State Switcher Bar (7 States Requested) -->
+<nav aria-label="Interactive States Preview" class="w-full flex flex-wrap items-center justify-between gap-2.5 bg-white border border-slate-200/80 px-4 py-2 rounded-xl shadow-sm">
+<div class="flex items-center gap-1.5 text-slate-700 text-xs font-semibold shrink-0">
+<span class="material-symbols-outlined text-royal-cobalt text-[18px]">play_circle</span>
+<span>Simulate 7 States:</span>
+</div>
+<div class="flex flex-wrap items-center gap-1.5 text-xs font-medium" id="state-buttons">
+<button class="px-3 py-1.5 rounded-lg bg-royal-blue text-white shadow-sm transition-all duration-150" id="btn-state-1" onclick="setSimState(1)" type="button">
+          1. Log in (Default)
+        </button>
+<button class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all duration-150" id="btn-state-2" onclick="setSimState(2)" type="button">
+          2. Sign up
+        </button>
+<button class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all duration-150" id="btn-state-3" onclick="setSimState(3)" type="button">
+          3. Code OTP Step
+        </button>
+<button class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all duration-150" id="btn-state-4" onclick="setSimState(4)" type="button">
+          4. Error: Wrong Code
+        </button>
+<button class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all duration-150" id="btn-state-5" onclick="setSimState(5)" type="button">
+          5. Loading Spinner
+        </button>
+<button class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all duration-150" id="btn-state-6" onclick="setSimState(6)" type="button">
+          6. Success Verified
+        </button>
+<button class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all duration-150" id="btn-state-7" onclick="setSimState(7)" type="button">
+          7. Google Flow Modal
+        </button>
+</div>
+</nav>
+</header>
+<!-- MAIN 1440px DESKTOP SPLIT CONTAINER -->
+<main class="w-full max-w-[1440px] min-h-[720px] lg:h-[820px] rounded-3xl overflow-hidden shadow-2xl grid grid-cols-1 lg:grid-cols-10 border border-slate-200/50 relative bg-surface-card">
+<!-- LEFT PANEL: ~55% (Col span 1-5 or 1-6; 55% = 6 cols in 11 or 5.5 cols in 10; using 5.5/10 -> col-span-5 lg:col-span-6 on 1100+) -->
+<!-- Left Panel: Brand Gradient Midnight Indigo to Deep (55%) -->
+<section class="lg:col-span-6 relative flex flex-col justify-between p-8 sm:p-12 lg:p-14 overflow-hidden bg-gradient-to-b from-midnight via-[#191542] to-midnight-deep text-white">
+<!-- Background Ambient Glow & Grid -->
+<div class="absolute inset-0 pointer-events-none overflow-hidden">
+<!-- Faint grid pattern -->
+<svg class="absolute inset-0 w-full h-full opacity-[0.06]" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<pattern height="40" id="grid-left" patternunits="userSpaceOnUse" width="40">
+<path d="M 40 0 L 0 0 0 40" fill="none" stroke="#FFFFFF" stroke-width="0.8"></path>
+</pattern>
+</defs>
+<rect fill="url(#grid-left)" height="100%" width="100%"></rect>
+</svg>
+<!-- Ambient radial orbs -->
+<div class="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-royal-cobalt/40 blur-[90px]"></div>
+<div class="absolute top-1/2 -right-20 w-80 h-80 rounded-full bg-royal-blue/20 blur-[100px]"></div>
+<div class="absolute -bottom-20 left-1/3 w-80 h-80 rounded-full bg-midnight/80 blur-[80px]"></div>
+</div>
+<!-- Top Left: Tor Lawyer Brand Logo with Justice Emblem -->
+<div class="relative z-10 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-white text-[22px]">balance</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-bold tracking-tight text-lg text-white">Tor Lawyer</span>
+<span class="text-[10px] font-semibold tracking-wide uppercase px-2 py-0.5 rounded-full bg-royal-blue/30 text-blue-200 border border-royal-blue/40">Legal AI</span>
+</div>
+<span class="text-[11px] text-slate-300/80 font-bangla">আপনার বুদ্ধিমান আইনি সহযোগী</span>
+</div>
+</div>
+</div>
+<!-- Center Visual: One Large Central 3D / Glassmorphism Illustration with 3 Floating Chips -->
+<div class="relative z-10 flex-1 my-6 flex items-center justify-center">
+<!-- Main Floating Rig -->
+<div class="relative w-full max-w-[420px] h-[340px] flex items-center justify-center">
+<!-- Central Composite: Floating Legal Document with Red & Green Luminous Bars -->
+<div class="animate-float-slow relative w-[280px] sm:w-[320px] h-[320px] rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 p-5 shadow-glass flex flex-col justify-between">
+<!-- Header bar of legal document -->
+<div class="flex items-center justify-between border-b border-white/15 pb-3">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-crimson"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-warm-amber"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-olive"></span>
+<span class="text-[11px] text-slate-300 font-mono ml-2">contract_audit.ai</span>
+</div>
+<span class="material-symbols-outlined text-slate-300 text-[18px]">gavel</span>
+</div>
+<!-- Content lines with luminous highlighting bars -->
+<div class="space-y-3.5 my-3">
+<!-- Regular text line -->
+<div class="w-3/4 h-2 rounded bg-white/20"></div>
+<!-- Red Flag highlighted clause line -->
+<div class="relative p-2 rounded-lg bg-crimson/20 border border-crimson/40">
+<div class="flex items-center justify-between mb-1">
+<div class="w-2/5 h-2 rounded bg-crimson/80"></div>
+<span class="text-[10px] text-rose-300 font-semibold tracking-wider uppercase">Unilateral Risk</span>
+</div>
+<div class="w-full h-1.5 rounded bg-crimson/40"></div>
+</div>
+<!-- Regular text lines -->
+<div class="space-y-1.5">
+<div class="w-full h-2 rounded bg-white/20"></div>
+<div class="w-5/6 h-2 rounded bg-white/20"></div>
+</div>
+<!-- Green Flag verified clause line -->
+<div class="relative p-2 rounded-lg bg-olive/20 border border-olive/40">
+<div class="flex items-center justify-between mb-1">
+<div class="w-1/2 h-2 rounded bg-emerald-400"></div>
+<span class="text-[10px] text-emerald-300 font-semibold tracking-wider uppercase">Compliant</span>
+</div>
+<div class="w-4/5 h-1.5 rounded bg-olive/40"></div>
+</div>
+<div class="w-2/3 h-2 rounded bg-white/20"></div>
+</div>
+<!-- Footer summary indicator inside document -->
+<div class="pt-2.5 border-t border-white/15 flex items-center justify-between text-[11px] text-slate-300">
+<span class="font-mono">Verdict: Clean Title</span>
+<span class="flex items-center gap-1 text-emerald-300 font-medium">
+<span class="material-symbols-outlined text-[15px]">verified</span> 99.2%
+              </span>
+</div>
+<!-- Overlapping Frosted Glass Shield with Crisp Green Checkmark -->
+<div class="absolute -bottom-5 -right-6 w-20 h-24 rounded-2xl bg-white/20 backdrop-blur-2xl border border-white/40 shadow-xl flex flex-col items-center justify-center">
+<div class="w-11 h-11 rounded-full bg-olive flex items-center justify-center text-white shadow-glow-olive mb-1">
+<span class="material-symbols-outlined text-[24px] font-bold">check</span>
+</div>
+<span class="text-[9px] font-bold tracking-wider uppercase text-white/90">Shielded</span>
+</div>
+<!-- Floating Brass/Gold Balance Scale Emblem with subtle glow -->
+<div class="absolute -top-5 -left-5 w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-400/90 to-amber-600/90 backdrop-blur-md border border-amber-200/50 shadow-lg flex items-center justify-center text-slate-950">
+<span class="material-symbols-outlined text-[26px]">balance</span>
+</div>
+</div>
+<!-- Surrounding Floating Glass Chips (2-3 words max, strictly visual-first) -->
+<!-- Chip 1: Red Flag Icon + "Red flags" (Top Right Offset) -->
+<div class="animate-chip-1 absolute -top-4 right-2 sm:-right-4 px-3 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/30 shadow-glass flex items-center gap-2">
+<div class="w-5 h-5 rounded-full bg-crimson flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[13px]">flag</span>
+</div>
+<span class="text-xs font-semibold text-white tracking-wide">Red flags</span>
+</div>
+<!-- Chip 2: Green Flag Icon + "Green flags" (Bottom Left Offset) -->
+<div class="animate-chip-2 absolute -bottom-6 left-0 sm:-left-4 px-3 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/30 shadow-glass flex items-center gap-2">
+<div class="w-5 h-5 rounded-full bg-olive flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+</div>
+<span class="text-xs font-semibold text-white tracking-wide">Green flags</span>
+</div>
+<!-- Chip 3: Scale/Gavel Icon + "Clear verdict" (Center Left / Mid Offset) -->
+<div class="animate-chip-3 absolute top-1/2 -left-6 sm:-left-12 -translate-y-1/2 px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/30 shadow-glass flex items-center gap-2">
+<div class="w-5 h-5 rounded-full bg-royal-blue flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[13px]">fact_check</span>
+</div>
+<span class="text-xs font-semibold text-white tracking-wide">Clear verdict</span>
+</div>
+</div>
+</div>
+<!-- Subtle bottom indicator (strict visual, zero fake claims) -->
+<div class="relative z-10 flex items-center justify-between text-xs text-slate-400">
+<span class="inline-flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+          AI Agreement Engine
+        </span>
+<span class="text-slate-400/80 font-mono text-[11px]">v2.4 Production</span>
+</div>
+</section>
+<!-- RIGHT PANEL: ~45% Clean Crisp Surface #F8FAFC -->
+<section class="lg:col-span-4 bg-surface-light flex flex-col justify-between p-6 sm:p-10 lg:p-12 relative overflow-y-auto">
+<!-- Top Header Navigation & Language Switcher -->
+<div class="flex items-center justify-between w-full mb-6">
+<!-- Back to Home Link -->
+<a class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-royal-blue transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+<span>Back to home</span>
+</a>
+<!-- Language Toggle -->
+<div class="inline-flex items-center p-0.5 rounded-full bg-slate-200/80 text-xs border border-slate-300/60">
+<button class="px-2.5 py-1 rounded-full text-slate-600 font-bangla transition-all hover:text-slate-900" id="lang-bn" onclick="setLanguage('bn')" type="button">
+            বাংলা
+          </button>
+<button class="px-2.5 py-1 rounded-full bg-white text-slate-900 font-semibold shadow-sm transition-all" id="lang-en" onclick="setLanguage('en')" type="button">
+            English
+          </button>
+</div>
+</div>
+<!-- Centered Floating Authentication Card (approx 420px wide) -->
+<div class="w-full max-w-[420px] mx-auto my-auto animate-card-slide">
+<div class="bg-surface-card rounded-2xl shadow-card-elevated border border-border-subtle p-6 sm:p-8 relative">
+<!-- Segmented Tab Switch: Log in | Sign up with smooth pill -->
+<div class="mb-6 p-1 rounded-xl bg-slate-100 flex items-center relative" id="auth-tab-group">
+<button class="flex-1 py-1.5 text-xs font-semibold rounded-lg bg-white text-slate-900 shadow-sm transition-all duration-200 text-center" id="tab-login" onclick="setTab('login')" type="button">
+              Log in
+            </button>
+<button class="flex-1 py-1.5 text-xs font-medium rounded-lg text-slate-500 hover:text-slate-900 transition-all duration-200 text-center" id="tab-signup" onclick="setTab('signup')" type="button">
+              Sign up
+            </button>
+</div>
+<!-- Card Header & Dynamic Heading -->
+<div class="text-left mb-6">
+<div class="flex items-center gap-2 mb-1.5">
+<div class="w-6 h-6 rounded-md bg-midnight text-white flex items-center justify-center">
+<span class="material-symbols-outlined text-[15px]">balance</span>
+</div>
+<span class="text-xs font-semibold text-royal-cobalt tracking-wide">Tor Lawyer</span>
+</div>
+<h1 class="text-2xl font-bold tracking-tight text-slate-900" id="card-heading">
+              Welcome back
+            </h1>
+<p class="text-xs text-slate-500 mt-1" id="card-subheading">
+              Enter your credentials to access your legal dashboard.
+            </p>
+</div>
+<!-- DYNAMIC FORM CONTAINER (Renders all 7 States) -->
+<div class="space-y-4" id="auth-content-area">
+<!-- STATE 1 & 2: Default Credentials Form -->
+<div class="space-y-4" id="view-credentials">
+<!-- Full Width 'Continue with Google' Button (Leading authentic Google button) -->
+<button class="w-full py-2.5 px-4 rounded-xl border border-slate-300 hover:border-slate-400 bg-white hover:bg-slate-50 text-slate-700 font-semibold text-xs flex items-center justify-center gap-2.5 shadow-sm transition-all duration-150" onclick="handleGoogleClick()" type="button">
+<!-- SVG Google Icon -->
+<svg class="w-4 h-4" viewbox="0 0 24 24">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"></path>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"></path>
+</svg>
+<span>Continue with Google</span>
+</button>
+<!-- Thin divider with "or" badge -->
+<div class="relative flex items-center justify-center my-4">
+<div class="w-full border-t border-slate-200"></div>
+<span class="absolute bg-white px-3 text-[11px] font-medium text-slate-400 uppercase tracking-wider">or</span>
+</div>
+<!-- Full Name Input (Visible ONLY in Sign Up Tab) -->
+<div class="hidden space-y-1" id="field-fullname">
+<label class="block text-xs font-semibold text-slate-700" for="input-fullname">Full name</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-[18px]">person</span>
+<input class="w-full pl-9 pr-3.5 py-2.5 rounded-xl border border-slate-300 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-royal-blue focus:border-royal-blue bg-white" id="input-fullname" placeholder="Tanvir Hossain" type="text" value="Tanvir Hossain"/>
+</div>
+</div>
+<!-- Email or Phone Number Input -->
+<div class="space-y-1">
+<label class="block text-xs font-semibold text-slate-700" for="input-contact">Email or phone number</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-[18px]">mail</span>
+<input class="w-full pl-9 pr-3.5 py-2.5 rounded-xl border border-slate-300 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-royal-blue focus:border-royal-blue bg-white" id="input-contact" placeholder="name@company.com or +880 1712..." type="text" value="tanvir.law@example.com"/>
+</div>
+</div>
+<!-- Full width Primary CTA button -->
+<button class="w-full py-2.5 px-4 rounded-xl bg-royal-blue hover:bg-royal-blue-hover text-white text-xs font-semibold shadow-md transition-all duration-150 flex items-center justify-center gap-2" id="btn-submit-credentials" onclick="submitCredentials()" type="button">
+<span id="btn-credentials-text">Send code</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+<!-- STATE 3, 4, 5: OTP Code Step -->
+<div class="hidden space-y-4" id="view-otp">
+<div class="flex items-center justify-between text-xs">
+<span class="text-slate-500">Code sent to:</span>
+<button class="text-royal-blue font-semibold hover:underline" onclick="setSimState(1)" type="button">
+                  Change email or number
+                </button>
+</div>
+<!-- 6-Box OTP Code Entry -->
+<div class="space-y-2" id="otp-container">
+<div class="grid grid-cols-6 gap-2" id="otp-boxes-row">
+<input class="otp-input w-full aspect-square text-center text-lg font-bold rounded-xl border border-slate-300 focus:border-royal-blue focus:ring-2 focus:ring-royal-blue text-slate-900 bg-white transition-all outline-none" maxlength="1" type="text" value="7"/>
+<input class="otp-input w-full aspect-square text-center text-lg font-bold rounded-xl border border-slate-300 focus:border-royal-blue focus:ring-2 focus:ring-royal-blue text-slate-900 bg-white transition-all outline-none" maxlength="1" type="text" value="3"/>
+<input class="otp-input w-full aspect-square text-center text-lg font-bold rounded-xl border border-slate-300 focus:border-royal-blue focus:ring-2 focus:ring-royal-blue text-slate-900 bg-white transition-all outline-none" maxlength="1" type="text" value="9"/>
+<input class="otp-input w-full aspect-square text-center text-lg font-bold rounded-xl border border-slate-300 focus:border-royal-blue focus:ring-2 focus:ring-royal-blue text-slate-900 bg-white transition-all outline-none" maxlength="1" type="text" value="2"/>
+<input class="otp-input w-full aspect-square text-center text-lg font-bold rounded-xl border border-slate-300 focus:border-royal-blue focus:ring-2 focus:ring-royal-blue text-slate-900 bg-white transition-all outline-none ring-2 ring-royal-blue" maxlength="1" type="text" value=""/>
+<input class="otp-input w-full aspect-square text-center text-lg font-bold rounded-xl border border-slate-300 focus:border-royal-blue focus:ring-2 focus:ring-royal-blue text-slate-900 bg-white transition-all outline-none" maxlength="1" type="text" value=""/>
+</div>
+<!-- Error Message (State 4) -->
+<div class="hidden flex items-center gap-1.5 text-crimson text-xs font-medium pt-1" id="otp-error-msg">
+<span class="material-symbols-outlined text-[16px]">error</span>
+<span>Code is incorrect. Try again.</span>
+</div>
+</div>
+<!-- Resend Timer -->
+<div class="flex items-center justify-between text-xs text-slate-500 pt-1">
+<span>Resend in <strong class="text-slate-800" id="resend-timer">0:30</strong></span>
+<button class="text-slate-400 hover:text-royal-blue transition-colors font-medium cursor-not-allowed" disabled="" id="btn-resend" type="button">
+                  Resend code
+                </button>
+</div>
+<!-- Verify Button (With spinner support for State 5) -->
+<button class="w-full py-2.5 px-4 rounded-xl bg-royal-blue hover:bg-royal-blue-hover text-white text-xs font-semibold shadow-md transition-all duration-150 flex items-center justify-center gap-2" id="btn-verify-otp" onclick="handleVerifyClick()" type="button">
+<!-- Spinner SVG -->
+<svg class="hidden animate-spin h-4 w-4 text-white" fill="none" id="verify-spinner" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+<path class="opacity-75" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" fill="currentColor"></path>
+</svg>
+<span id="btn-verify-text">Verify</span>
+</button>
+</div>
+<!-- STATE 6: Success State View -->
+<div class="hidden py-6 text-center space-y-3" id="view-success">
+<!-- Large Animated Checkmark in a Ring -->
+<div class="mx-auto w-16 h-16 rounded-full bg-emerald-50 border-2 border-emerald-500 flex items-center justify-center text-emerald-600 shadow-glow-olive">
+<svg class="w-9 h-9 stroke-current text-olive fill-none" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewbox="0 0 24 24">
+<path class="stroke-draw" d="M5 13l4 4L19 7"></path>
+</svg>
+</div>
+<div class="space-y-1">
+<h3 class="text-lg font-bold text-slate-900">You're in</h3>
+<p class="text-xs text-slate-500">Redirecting to your legal workspace...</p>
+</div>
+<!-- Progress indicator bar -->
+<div class="w-3/4 mx-auto bg-slate-100 rounded-full h-1.5 overflow-hidden">
+<div class="bg-royal-blue h-1.5 rounded-full w-full animate-pulse"></div>
+</div>
+</div>
+</div>
+<!-- Tiny Footer Line -->
+<p class="text-[11px] text-slate-400 text-center mt-6 leading-relaxed">
+            By continuing, you agree to the <a class="text-slate-600 hover:text-royal-blue underline font-medium" href="#">Terms</a> and <a class="text-slate-600 hover:text-royal-blue underline font-medium" href="#">Privacy Policy</a>.
+          </p>
+<!-- STATE 7: Google Flow Modal / Card Overlay -->
+<div class="hidden absolute inset-0 bg-white/95 backdrop-blur-sm rounded-2xl z-30 flex flex-col items-center justify-center p-6 text-center space-y-4" id="google-flow-overlay">
+<!-- Google Logo with spinning halo -->
+<div class="relative w-14 h-14 flex items-center justify-center">
+<svg class="animate-spin w-14 h-14 text-royal-blue opacity-40 absolute" viewbox="0 0 24 24">
+<circle class="opacity-25" cx="12" cy="12" fill="none" r="10" stroke="currentColor" stroke-width="3"></circle>
+<path class="opacity-75" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" fill="currentColor"></path>
+</svg>
+<svg class="w-7 h-7 relative z-10" viewbox="0 0 24 24">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"></path>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"></path>
+</svg>
+</div>
+<div class="space-y-1">
+<h4 class="text-sm font-bold text-slate-800">Connecting to Google...</h4>
+<p class="text-xs text-slate-500">Authenticating institutional OAuth session</p>
+</div>
+<button class="text-xs font-semibold text-royal-blue hover:underline" onclick="setSimState(6)" type="button">
+              Simulate approval
+            </button>
+</div>
+</div>
+<!-- Sub-card Security Badge -->
+<div class="flex items-center justify-center gap-1.5 text-slate-500 text-xs mt-4">
+<span class="material-symbols-outlined text-[16px] text-slate-400">lock</span>
+<span class="font-medium">Private and encrypted</span>
+</div>
+</div>
+<!-- Bottom Spacer / Legal compliance mark -->
+<div class="text-center text-[11px] text-slate-400 mt-6">
+        © 2025 Tor Lawyer. All rights reserved.
+      </div>
+</section>
+</main>
+<!-- Interactive State Controller Script -->
+<script>
+    let activeTab = 'login';
+    let currentSimState = 1;
+    let selectedLang = 'en';
+
+    function setTab(tab) {
+      activeTab = tab;
+      const tabLogin = document.getElementById('tab-login');
+      const tabSignup = document.getElementById('tab-signup');
+      const heading = document.getElementById('card-heading');
+      const subheading = document.getElementById('card-subheading');
+      const fieldFullname = document.getElementById('field-fullname');
+      const btnText = document.getElementById('btn-credentials-text');
+
+      if (tab === 'login') {
+        tabLogin.className = 'flex-1 py-1.5 text-xs font-semibold rounded-lg bg-white text-slate-900 shadow-sm transition-all duration-200 text-center';
+        tabSignup.className = 'flex-1 py-1.5 text-xs font-medium rounded-lg text-slate-500 hover:text-slate-900 transition-all duration-200 text-center';
+        heading.textContent = selectedLang === 'bn' ? 'স্বাগতম' : 'Welcome back';
+        subheading.textContent = selectedLang === 'bn' ? 'আপনার অ্যাকাউন্টে প্রবেশ করতে তথ্য দিন।' : 'Enter your credentials to access your legal dashboard.';
+        fieldFullname.classList.add('hidden');
+        btnText.textContent = 'Send code';
+      } else {
+        tabSignup.className = 'flex-1 py-1.5 text-xs font-semibold rounded-lg bg-white text-slate-900 shadow-sm transition-all duration-200 text-center';
+        tabLogin.className = 'flex-1 py-1.5 text-xs font-medium rounded-lg text-slate-500 hover:text-slate-900 transition-all duration-200 text-center';
+        heading.textContent = selectedLang === 'bn' ? 'অ্যাকাউন্ট তৈরি করুন' : 'Create your account';
+        subheading.textContent = selectedLang === 'bn' ? 'এআই আইনি যাচাইকরণ সুবিধা ব্যবহার করুন।' : 'Start auditing contracts with AI intelligence.';
+        fieldFullname.classList.remove('hidden');
+        btnText.textContent = 'Continue';
+      }
+    }
+
+    function setLanguage(lang) {
+      selectedLang = lang;
+      const bnBtn = document.getElementById('lang-bn');
+      const enBtn = document.getElementById('lang-en');
+
+      if (lang === 'bn') {
+        bnBtn.className = 'px-2.5 py-1 rounded-full bg-white text-slate-900 font-semibold shadow-sm font-bangla transition-all';
+        enBtn.className = 'px-2.5 py-1 rounded-full text-slate-600 font-medium transition-all hover:text-slate-900';
+      } else {
+        enBtn.className = 'px-2.5 py-1 rounded-full bg-white text-slate-900 font-semibold shadow-sm transition-all';
+        bnBtn.className = 'px-2.5 py-1 rounded-full text-slate-600 font-bangla transition-all hover:text-slate-900';
+      }
+      setTab(activeTab);
+    }
+
+    function setSimState(stateNum) {
+      currentSimState = stateNum;
+
+      // Update state buttons styling
+      for (let i = 1; i <= 7; i++) {
+        const btn = document.getElementById('btn-state-' + i);
+        if (btn) {
+          if (i === stateNum) {
+            btn.className = 'px-3 py-1.5 rounded-lg bg-royal-blue text-white shadow-sm transition-all duration-150';
+          } else {
+            btn.className = 'px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all duration-150';
+          }
+        }
+      }
+
+      const viewCreds = document.getElementById('view-credentials');
+      const viewOtp = document.getElementById('view-otp');
+      const viewSuccess = document.getElementById('view-success');
+      const googleOverlay = document.getElementById('google-flow-overlay');
+      const otpBoxesRow = document.getElementById('otp-boxes-row');
+      const otpErrorMsg = document.getElementById('otp-error-msg');
+      const verifySpinner = document.getElementById('verify-spinner');
+      const verifyBtn = document.getElementById('btn-verify-otp');
+      const verifyBtnText = document.getElementById('btn-verify-text');
+      const otpInputs = document.querySelectorAll('.otp-input');
+
+      // Reset common elements
+      googleOverlay.classList.add('hidden');
+      viewSuccess.classList.add('hidden');
+      otpErrorMsg.classList.add('hidden');
+      verifySpinner.classList.add('hidden');
+      verifyBtn.disabled = false;
+      verifyBtnText.textContent = 'Verify';
+      otpBoxesRow.classList.remove('animate-shake');
+
+      // Reset box styles
+      otpInputs.forEach(input => {
+        input.classList.remove('border-crimson', 'text-crimson', 'bg-rose-50', 'ring-crimson');
+        input.classList.add('border-slate-300', 'text-slate-900');
+        input.disabled = false;
+      });
+
+      if (stateNum === 1) {
+        // State 1: Log in, default
+        viewCreds.classList.remove('hidden');
+        viewOtp.classList.add('hidden');
+        setTab('login');
+      } else if (stateNum === 2) {
+        // State 2: Sign up, default (with Full Name input)
+        viewCreds.classList.remove('hidden');
+        viewOtp.classList.add('hidden');
+        setTab('signup');
+      } else if (stateNum === 3) {
+        // State 3: Code step (6-box OTP entry)
+        viewCreds.classList.add('hidden');
+        viewOtp.classList.remove('hidden');
+        document.getElementById('card-heading').textContent = 'Enter security code';
+        document.getElementById('card-subheading').textContent = 'Enter the 6-digit code sent to your contact.';
+      } else if (stateNum === 4) {
+        // State 4: Error: wrong code (boxes highlighted red shake state, 'Code is incorrect')
+        viewCreds.classList.add('hidden');
+        viewOtp.classList.remove('hidden');
+        document.getElementById('card-heading').textContent = 'Verification error';
+        document.getElementById('card-subheading').textContent = 'Please check the code and try again.';
+        otpErrorMsg.classList.remove('hidden');
+        otpBoxesRow.classList.add('animate-shake');
+        otpInputs.forEach(input => {
+          input.classList.remove('border-slate-300');
+          input.classList.add('border-crimson', 'text-crimson', 'bg-rose-50');
+        });
+      } else if (stateNum === 5) {
+        // State 5: Loading: button spinner, disabled controls
+        viewCreds.classList.add('hidden');
+        viewOtp.classList.remove('hidden');
+        document.getElementById('card-heading').textContent = 'Verifying code...';
+        document.getElementById('card-subheading').textContent = 'Checking credentials against secure server...';
+        verifySpinner.classList.remove('hidden');
+        verifyBtnText.textContent = 'Verifying...';
+        verifyBtn.disabled = true;
+        otpInputs.forEach(input => input.disabled = true);
+      } else if (stateNum === 6) {
+        // State 6: Success: large animated checkmark in a ring, 'You're in', redirect preview
+        viewCreds.classList.add('hidden');
+        viewOtp.classList.add('hidden');
+        viewSuccess.classList.remove('hidden');
+        document.getElementById('card-heading').textContent = 'Welcome back';
+        document.getElementById('card-subheading').textContent = 'Session securely authorized.';
+      } else if (stateNum === 7) {
+        // State 7: Google flow: 'Connecting to Google...' modal/card overlay with animated spinner
+        viewCreds.classList.remove('hidden');
+        viewOtp.classList.add('hidden');
+        googleOverlay.classList.remove('hidden');
+      }
+    }
+
+    function submitCredentials() {
+      setSimState(3);
+    }
+
+    function handleVerifyClick() {
+      setSimState(5);
+      setTimeout(() => {
+        setSimState(6);
+      }, 1200);
+    }
+
+    function handleGoogleClick() {
+      setSimState(7);
+    }
+
+    // Auto focus movement across OTP inputs
+    document.querySelectorAll('.otp-input').forEach((input, idx, list) => {
+      input.addEventListener('input', (e) => {
+        if (e.target.value.length === 1 && idx < list.length - 1) {
+          list[idx + 1].focus();
+        }
+      });
+      input.addEventListener('keydown', (e) => {
+        if (e.key === 'Backspace' && !e.target.value && idx > 0) {
+          list[idx - 1].focus();
+        }
+      });
+    });
+  </script>
+</body></html>
